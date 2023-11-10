@@ -1,0 +1,26 @@
+<div>
+    <h2>Filtre utilisateur</h2>
+    <app-search-bar (searchChange)="onCriteriaChange($event)"/>
+
+    <h2>Liste des utilisateurs</h2>
+    <ul>
+      <li *ngFor="let user of users$ | async; trackBy: trackByFn">
+        <a [routerLink]="'/users/' + user.id"> {{ user.name }}</a>
+        <p>{{ user.email }}</p>
+      </li>
+    </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users$ | async; trackBy: trackByFn">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }} </td> 
+      </tr>
+    </tbody>
+  </table>
+</div>

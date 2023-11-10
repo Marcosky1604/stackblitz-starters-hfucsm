@@ -1,0 +1,11 @@
+ul {
+  display: grid;
+}
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+  width: 1fr;
+  background-color: beige;
+}
